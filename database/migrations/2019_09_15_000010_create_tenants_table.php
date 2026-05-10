@@ -10,16 +10,26 @@ class CreateTenantsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
         Schema::create('tenants', function (Blueprint $table) {
             $table->string('id')->primary();
-
-            // your custom columns may go here
-
+            $table->string('code')->unique();
+            $table->string('name');
+            $table->json('address');
+            $table->string('phone_number')->nullable();
+            $table->string('contact_email')->nullable();
+            $table->string('logo_path')->nullable();
+            $table->string('primary_color')->nullable();
+            $table->string('secondary_color')->nullable();
+            $table->string('locale')->default('en');
+            $table->string('timezone')->default('UTC');
+            $table->integer('max_students')->nullable();
+            $table->string('status')->default('active');
+            $table->string('plan')->nullable();
+            $table->timestamp('subscription_ends_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
             $table->json('data')->nullable();
         });
@@ -27,8 +37,6 @@ class CreateTenantsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down(): void
     {
