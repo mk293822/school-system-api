@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Tenancy\Http\Controllers\Api\V1\TenantController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::get('/tenants', [TenantController::class, 'index']);
