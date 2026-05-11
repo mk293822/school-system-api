@@ -2,6 +2,7 @@
 
 namespace App\Identity\Http\Requests;
 
+use App\Identity\Infrastructure\Persistence\Eloquent\UserModel;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use Modules\Identity\Infrastructure\Persistance\Eloquent\UserModel;
 
 class LoginRequest extends FormRequest
 {

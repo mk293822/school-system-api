@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Identity\Infrastructure\Persistance\Mappers;
+namespace App\Identity\Infrastructure\Persistence\Mappers;
 
 use App\Identity\Domain\Entities\User;
-use Modules\Identity\Infrastructure\Persistance\Eloquent\UserModel;
+use App\Identity\Infrastructure\Persistence\Eloquent\UserModel;
 
 class UserMapper
 {

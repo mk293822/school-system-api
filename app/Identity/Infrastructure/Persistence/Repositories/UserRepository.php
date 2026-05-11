@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Identity\Infrastructure\Persistance\Repositories;
+namespace App\Identity\Infrastructure\Persistence\Repositories;
 
 use App\Identity\Domain\Entities\User;
 use App\Identity\Domain\Repositories\UserRepositoryInterface;
 use App\Identity\Domain\ValueObjects\Email;
 use App\Identity\Domain\ValueObjects\PhoneNumber;
-use App\Identity\Infrastructure\Persistance\Mappers\UserMapper;
+use App\Identity\Infrastructure\Persistence\Eloquent\UserModel;
+use App\Identity\Infrastructure\Persistence\Mappers\UserMapper;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
-use Modules\Identity\Infrastructure\Persistance\Eloquent\UserModel;
 
 class UserRepository implements UserRepositoryInterface
 {
